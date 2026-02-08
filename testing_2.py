@@ -28,7 +28,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 @bot.event
 async def on_ready():
     print(f"Bot login sebagai {bot.user}")
-    channel = bot.get_channel(1339936920897327189)
+    channel = bot.get_channel(CHANNEL_ID)
 
     if channel:
         await channel.send("Halo! Bot To-Do List sudah online. Aku adalah bot yang bisa membantumu menyimpan tugas yang harus dikerjakan. Denganku, semua tugasmu akan menjadi lebih terorganisir. Berikut adalah kumpulan perintah yang bisa kau gunakan :" \
@@ -39,7 +39,7 @@ async def on_ready():
         "\n !random - menampilkan tugas acak dari daftar tugasmu.")
 
     else:
-        print(f"Error: Channel with ID {1339936920897327189} not found.")
+        print(f"Error: Channel with ID {CHANNEL_ID} not found.")
 
 
 
@@ -117,5 +117,6 @@ async def clear(ctx):
 # =====================
 # RUN BOT
 # =====================
-bot.run(TOKEN)
+bot.run(TOKEN_ANDA)
+
 
